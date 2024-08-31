@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time-Locked Note</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    #note, #countdown, #passwordSection {
+      display: none;
+      margin-top: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Time-Locked Note</h1>
+
+  <!-- Password Protection Section -->
+  <div id="passwordSection">
+    <input type="password" id="accessPassword" placeholder="Enter password to unlock">
+    <button onclick="unlockAccess()">Unlock</button>
+  </div>
+
+  <!-- Note Input Section -->
+  <div id="noteSection">
+    <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+    <br>
+    <label for="timerInput">Set Timer (in seconds):</label>
+    <input type="number" id="timerInput" min="1">
+    <br>
+    <button onclick="saveNote()">Save Note & Start Timer</button>
+  </div>
+
+  <!-- Countdown Display Section -->
+  <div id="countdown"></div>
+
+  <!-- Note Display Section -->
+  <div id="note">
+    <h2>Your Note:</h2>
+    <p id="noteText"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
